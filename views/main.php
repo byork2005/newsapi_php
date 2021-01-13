@@ -3,7 +3,6 @@
     <title>PHP Test</title>
     <?php require 'views/head_links.php'; ?>
   </head>
-
   <body>
     <div class="container">
       <h1>News API Example</h1>

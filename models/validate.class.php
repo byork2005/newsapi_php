@@ -1,4 +1,5 @@
 <?php
+// Validate class can be expanded as needed to protech from malicious or inaccurate submissions.
 
 class validate {
 
@@ -8,12 +9,6 @@ class validate {
     $this -> value = htmlspecialchars(stripslashes(trim($value)));
     return $this -> value;
   }
-
-
-
-
-
-
 
 }
 

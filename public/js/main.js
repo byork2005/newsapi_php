@@ -19,6 +19,7 @@ $(document).ready(function(){
 
 });
 
+// Builds the query and makes js api call. Takes response and calls build function.
 function news_search_js(query) {
   const api_key = "&apiKey=61c42825ab754c2b973d3041c2523b3f";
   var queryURL = "https://newsapi.org/v2/everything?sources=google-news&language=en&q=" + query + api_key;
@@ -27,11 +28,11 @@ function news_search_js(query) {
     url: queryURL,
     method: "GET"
   }).done(function(response) {
-    // console.log(response.articles);
     build_list(response.articles);
   });
 }
 
+// Builds the search object and sends to controller and then search class. Takes repsonse and calls build function.
 function news_search_php(val) {
   let search_obj = {
     do_what: 'search',
@@ -44,18 +45,17 @@ function news_search_php(val) {
     data: search_obj,
     dataType: 'json',
     success: function(response){
-      // console.log(response.articles);
       build_list(response.articles)
     }
   })
 }
 
+// accepts the articles response object and keys through it to create each tile with the appropriate fields. One image check to determine if a placeholder is needed.
 function build_list(articles) {
   $('#results').empty();
   Object.keys(articles).forEach(key => {
     let ak = articles[key];
     let img_url = (ak['urlToImage'])?ak['urlToImage']:'public/assets/placeholder.jpg';
-    // console.log(key, articles[key])
     let new_card = `<div class="col card-deck">
                       <div class="card mb-3">
                         <div class="row no-gutters">

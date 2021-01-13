@@ -1,4 +1,5 @@
 <?php
+// Basic Search class. Can be expanded to include features such as article saving, favorites, edit and delete.
 
 class search {
 
