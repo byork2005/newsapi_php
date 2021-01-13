@@ -1,6 +1,9 @@
 <html>
   <head>
-    <title>PHP Test</title>
+    <title>News API</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="public/assets/by_favicon02.png" />
     <?php require 'views/head_links.php'; ?>
   </head>
   <body>
